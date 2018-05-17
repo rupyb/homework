@@ -1,0 +1,115 @@
+html{
+    background-color: rgb(28, 163, 163);
+}
+body{
+    background-color: black;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: -65px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    margin-top: -65px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-style: oblique;
+    color:gold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+a{
+    text-decoration:none; 
+    color: red;
+}
+
+img{
+    border: gold solid 3px;
+
+}
+h2{
+    color:gold;
+    text-align: center;
+}
+h3{
+    color:gold;
+    text-align: center;
+}
+header {
+margin-top: 4em;
+text-align: center;
+
+}
+header ul{
+    padding-top: 50px;
+}
+/* index classes*/
+.pics{
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 231px;
+}
+.words a{
+   
+    
+    margin-left:100px;
+    margin-right: 100px;
+}
+.words {
+    text-align:center;
+
+}
+
+#menu {
+    text-align: center;
+   
+}
+#menu img{
+    text-align: center;
+    height: 150px;
+}
+.indexHeader{
+    position: fixed;
+    margin-top: 11px;
+    background-color: black;
+    margin-left: 173px;
+}
+.indexHeader li{
+   width:8em;
+    border:2px solid yellow;
+    border-radius: 12%;
+    box-shadow: -9px 10px 15px 1px green;
+    padding:2em;
+    display: inline;
+    list-style-image: url("images/Capture.PNG");
+}
+.indexHeader nav img{
+    float:left;
+height:40px;
+border:none
+}
+/* menu page css*/
+.contents{
+float:left;
+width:20%;
+padding:5px;
+
+box-sizing: border-box;
+
+}
+.contents img{
+     width:100%;
+    height:150px;
+}
+.contents img:hover{
+   width: 150%;
+   height:250px;
+   
+}
+
+.clearfix{
+    clear: both;
+}

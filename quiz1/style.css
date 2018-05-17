@@ -1,0 +1,26 @@
+html{
+background-color: black;
+}
+
+body{
+background-color: white;
+max-width: 67%;
+margin: auto;
+}
+
+div{
+    background-color: yellow;
+    border: 1px solid black;
+    /* max-width: 33%; */
+    text-align: center;
+    min-width: 264px;
+    display: inline-block;
+    margin: 15px;
+    /* padding-left: 6px; */
+    height: 132px;
+}
+
+p{
+
+    padding-top: 32px;
+}

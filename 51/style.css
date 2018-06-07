@@ -1,0 +1,204 @@
+body {
+    position: relative;
+    font-family: helvetica, arial, sans-serif;
+    display: grid;
+    grid-auto-rows: minmax(60px, auto);
+    grid-gap: 10px;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
+    grid-template-areas: ". . . ." ". header header ." ". productshead productshead ." ". computer computer ." ". choir choir ." ". candy candy ." ". signup signup ." ". finstatement finstatement ." ". finalstatement finalstatement .";
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        grid-template-columns: 1.5fr 3fr 3.6fr 3fr 1.5fr;
+        grid-template-areas: ". . . . ." 
+        ". header header header ."
+         ". productshead productshead productshead."
+          ". computer choir candy ."
+           ". signup signup signup ."
+           ". finstatement finstatement finstatement ."
+            ". finalstatement finalstatement finalstatement .";
+    }
+    .choir {
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    ul {
+        margin-left: 6%;
+    }
+    form div {
+        display: inline-block;
+    }
+}
+
+nav {
+    background-color: black;
+    color: white;
+    grid-area: nav;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+ul {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
+    grid-auto-rows: 40px;
+    margin-left: 12%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style-type: none;
+    padding-top: 11px;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.header {
+    grid-area: header;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+.header h1 {
+    text-transform: uppercase;
+}
+
+.productshead {
+    grid-area: productshead;
+}
+
+.computer {
+    grid-area: computer;
+    text-align: center;
+}
+
+.choir {
+    grid-area: choir;
+    text-align: center;
+}
+
+.candy {
+    grid-area: candy;
+    text-align: center;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+article {
+    grid-area: signup;
+    background-color: lightgray;
+    text-align: center;
+    padding-bottom: 25px;
+    border-radius: 3px;
+}
+
+form {
+    text-align: center;
+}
+
+article input {
+    border-radius: 3px;
+    box-shadow: 2px 2px black;
+}
+
+input[type="submit"] {
+    max-width: 18%;
+}
+
+div:nth-child(2) {
+    padding: 9px;
+}
+
+label {
+    padding-right: 6px;
+}
+
+.finstatement {
+    grid-area: finstatement;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas: "news news news " ". table .";
+}
+
+.news {
+    grid-area: news;
+}
+
+.table {
+    grid-area: table;
+}
+
+.table td {
+    text-align: right;
+}
+
+.table td, .table, .table th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, caption, tr td:nth-child(1) {
+    font-weight: bold;
+    text-align: center;
+}
+
+tfoot tr td[name="right"] {
+    text-align: right;
+}
+
+tr td:last-child {
+    color: red;
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color: lightgray;
+}
+
+table tr:hover {
+    background-color: lightblue;
+}
+
+aside {
+    grid-area: finalstatement;
+    margin-top: 30px;
+}
+
+footer {
+    grid-area: footer;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    color: white;
+    left: 0;
+    bottom: 0;
+}
+
+footer p {
+    margin-left: 15%;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
+}

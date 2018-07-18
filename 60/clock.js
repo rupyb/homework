@@ -106,7 +106,7 @@ obj.clockFace = (function (param) {
         if (realTime) {
             posMinute = realMinutes * 6;
         } else if (posSecond === 360) {
-            //  posSecond = 0;
+            // posSecond = 0;
             posMinute += 6;
         }
 

@@ -1,4 +1,4 @@
-(function()
+(function() {
 'use strict';
 
 const vidDiv = $('#vidDiv');
@@ -22,4 +22,4 @@ $.getJSON('vids.json', (loadedData) => {
     });
 
 });
-)();
+})();

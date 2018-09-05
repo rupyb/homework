@@ -8,7 +8,9 @@
     const savePictures = { drawings: [] };
     const savedDrawing = localStorage.picture ? JSON.parse(localStorage.picture) : {};
     const info = localStorage.info ? JSON.parse(localStorage.info) : { players: [] };
+    const select = $('#play');
     let currentPlayer;
+    startingSetup();
     $('#errorMessage').hide();
     if (savedDrawing.drawings) {
         savedDrawing.drawings.forEach(element => {
@@ -20,22 +22,24 @@
             // $(document).off('mouseup', setMouseUp);
         });
     }
-    makeNewImg('.div1', 'images/newRedEyes.png', 'newRedEyes', '142px', '24px');
-    makeNewImg('.div2', 'images/newEyes.png', 'newEyes', '132px', '135px');
-    makeNewImg('.div3', 'images/glassesWithNose.png', 'glassesWithNose', '132px', '229px');
-    makeNewImg('.div4', 'images/newPurpleEyes.png', 'newPurpleEyes', '184px', '34px');
-    makeNewImg('.div5', 'images/redNose.png', 'redNose', '193px', '118px');
-    makeNewImg('.div6', 'images/newLeftEar.png', 'leftEar', '206px', '300px');
-    makeNewImg('.div7', 'images/newRightEar.png', 'rightEar', '206px', '250px');
-    makeNewImg('.div8', 'images/newNose.png', 'nose', '250px', '40px');
-    makeNewImg('.div9', 'images/newBlueEyes.png', 'blueEyes', '250px', '130px');
-    makeNewImg('.div10', 'images/smile.png', 'smile', '292px', '150px');
-    makeNewImg('.div11', 'images/hand.png', 'hand', '315px', '23px');
-    makeNewImg('.div12', 'images/mustache.png', 'mustache', '360px', '36px');
-    makeNewImg('.div13', 'images/blackHat.png', 'blackHat', '360px', '135px');
-    makeNewImg('.div14', 'images/piinkHat.png', 'pinkHat', '375px', '243px');
-    makeNewImg('.div15', 'images/redLips.png', 'redLips', '289px', '243px');
 
+    function startingSetup() {
+        makeNewImg('.div1', 'images/newRedEyes.png', 'newRedEyes pieces', '142px', '24px');
+        makeNewImg('.div2', 'images/newEyes.png', 'newEyes pieces', '132px', '135px');
+        makeNewImg('.div3', 'images/glassesWithNose.png', 'glassesWithNose pieces', '132px', '229px');
+        makeNewImg('.div4', 'images/newPurpleEyes.png', 'newPurpleEyes pieces', '184px', '34px');
+        makeNewImg('.div5', 'images/redNose.png', 'redNose pieces', '193px ', '118px');
+        makeNewImg('.div6', 'images/newLeftEar.png', 'leftEar pieces', '206px', '300px');
+        makeNewImg('.div7', 'images/newRightEar.png', 'rightEar pieces', '206px', '250px');
+        makeNewImg('.div8', 'images/newNose.png', 'nose pieces', '250px', '40px');
+        makeNewImg('.div9', 'images/newBlueEyes.png', 'blueEyes pieces', '250px', '130px');
+        makeNewImg('.div10', 'images/smile.png', 'smile pieces', '292px', '150px');
+        makeNewImg('.div11', 'images/hand.png', 'hand pieces', '315px', '23px');
+        makeNewImg('.div12', 'images/mustache.png', 'mustache pieces', '360px', '36px');
+        makeNewImg('.div13', 'images/blackHat.png', 'blackHat pieces', '360px', '135px');
+        makeNewImg('.div14', 'images/piinkHat.png', 'pinkHat pieces', '375px', '243px');
+        makeNewImg('.div15', 'images/redLips.png', 'redLips pieces', '289px', '243px');
+    }
     function setMouseDown(event) {
         console.log('setMouseDown');
         offset = {
@@ -184,8 +188,50 @@
             $('#theH3').html('Please check if your user name and password is correct!');
             popUp.show();
         }
-        
+
         console.log('loadOldPlayer', $('#name').val());
         console.log($('#password').val());
+    }
+    $('#selecter').click(() => {
+        switch (select.val()) {
+        case 'newGame':
+            setNewGame();
+            break;
+        case 'saveImage':
+            saveImage();
+            break;
+        case 'loadGame':
+            loadGame();
+            break;
+        case 'music':
+            // setMusic();
+            break;
+        default:
+            break;
+        }
+        console.log('hello');
+        console.log(select.val());
+    });
+    function setNewGame() {
+        $('.images').empty();
+        startingSetup();
+    }
+    function saveImage() {
+        // console.log('one', $('.pieces'));
+        const getAllImages = document.querySelectorAll('.pieces');
+        getAllImages.forEach((element) => {
+            console.log(element);
+            console.log(element.data());
+        });
+        console.log('two', getAllImages);
+        localStorage.test = JSON.stringify(getAllImages);
+    }
+    function loadGame() {
+        const loadedGame = JSON.parse(localStorage.test);
+        console.log(loadedGame[0]);
+        // console.log(loadedGame);
+        console.log(loadedGame[0].jQuery331043413856106308812.className);
+        console.log(loadedGame[0].className);
+        console.log('hello hello');
     }
 }());

@@ -25,8 +25,8 @@
         }
         #theMain {
             display: flex;
-         background-image: url("images/potato.jpg");
-         background-repeat: repeat;
+            background-image: url("images/potato.jpg");
+            background-repeat: repeat;
             background-color: aqua;
             padding: 40px;
             width:100%;
@@ -160,12 +160,13 @@
             <li>
                 <audio controls src="audio/JumpmanTheme.mp3"></audio>
             <li>
-                <form>
+                <form id="selecter">
                     <select name="play" id="play">
-                        <option value="">New Game</option>
-                        <option value="">Save Image</option>
-                        <option value="">Loadsaved Game</option>
-                        <option value="">Music &#9989;</option>
+                        <option value="">Options</option>
+                        <option value="newGame">New Game</option>
+                        <option value="saveImage">Save Image</option>
+                        <option value="loadGame">Loadsaved Game</option>
+                        <option value="music">Music &#9989;</option>
                     </select>
                 </form>
             </li>
@@ -196,24 +197,22 @@
     </div>
     <main id="theMain">
         <aside id="aside" class="flex1">
-            <div class="div1">
-                <!-- <img class="pics " src="images/newRedEyes.png" alt="redEyes" />done -->
-            </div>
-            <div class="div2"></div>
-            <div class="div3"></div>
-            <div class="div4"></div>
-            <div class="div5"></div>
-            <div class="div6"></div>
-            <div class="div7"></div>
-            <div class="div8"></div>
-            <div class="div9"></div>
-            <div class="div10"></div>
-            <div class="div11"></div>
-            <div class="div12"></div>
-            <div class="div13"></div>
-            <div class="div14"></div>
-            <div class="div15"></div>
-            <div class="div16"></div>
+            <div class="div1 images"></div>
+            <div class="div2 images"></div>
+            <div class="div3 images"></div>
+            <div class="div4 images"></div>
+            <div class="div5 images"></div>
+            <div class="div6 images"></div>
+            <div class="div7 images"></div>
+            <div class="div8 images"></div>
+            <div class="div9 images"></div>
+            <div class="div10 images"></div>
+            <div class="div11 images"></div>
+            <div class="div12 images"></div>
+            <div class="div13 images"></div>
+            <div class="div14 images"></div>
+            <div class="div15 images"></div>
+            <div class="div16 images"></div>
             <!-- <img class="pics newBlueEyes" src="images/piinkHat.png" alt="blue" />  -->
             <!-- <img class="pics glassesWithNose" src="images/glassesWithNose.png" alt="glassesWithNose" /> done
             <img class="pics newEyes" src="images/newEyes.png" alt="plainEyes" /> done

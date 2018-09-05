@@ -128,6 +128,10 @@
         #flexIt {
             display:flex;
         }
+
+        #selecter {
+            display:none;
+        }
         .formDiv {
             display:flex;
         }
@@ -146,6 +150,10 @@
 
         .margin {
             margin: 12px 0;
+        } 
+
+        option[value="reset"] {
+            color:red;
         }    
     </style>
 </head>
@@ -162,7 +170,7 @@
             <li>
                 <form id="selecter">
                     <select name="play" id="play">
-                        <option value="">Options</option>
+                        <option value="reset">Options</option>
                         <option value="newGame">New Game</option>
                         <option value="saveImage">Save Image</option>
                         <option value="loadGame">Loadsaved Game</option>
@@ -188,6 +196,7 @@
         </div>
         <div class="buttonDiv">
             <button type="button" id="signInButton">Sign In</button>
+            <button type="button" id="cancelButton">Cancel</button>
         </div>
     </form>
     <div id="errorMessage">

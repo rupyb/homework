@@ -5,23 +5,23 @@
     let zIndex = 100000;
     let dragging = false;
     let offset;
-    const savePictures = { drawings: [] };
-    const savedDrawing = localStorage.picture ? JSON.parse(localStorage.picture) : {};
+    // const savePictures = { drawings: [] };
+    // const savedDrawing = localStorage.picture ? JSON.parse(localStorage.picture) : {};
     const info = localStorage.info ? JSON.parse(localStorage.info) : { players: [] };
     const select = $('#play');
     let currentPlayer;
     startingSetup();
     $('#errorMessage').hide();
-    if (savedDrawing.drawings) {
-        savedDrawing.drawings.forEach(element => {
-            // console.log(element.div);
-            // console.log(element);
-            addOldImg(element.div, element.src, element.className, element.top, element.left);
-            // $(document).off('mousedown', setMouseDown);
-            // $(document).off('mouseup', setMouseUp);
-            // $(document).off('mouseup', setMouseUp);
-        });
-    }
+    // if (savedDrawing.drawings) {
+    //     savedDrawing.drawings.forEach(element => {
+    //         // console.log(element.div);
+    //         // console.log(element);
+    //         addOldImg(element.div, element.src, element.className, element.top, element.left);
+    //         // $(document).off('mousedown', setMouseDown);
+    //         // $(document).off('mouseup', setMouseUp);
+    //         // $(document).off('mouseup', setMouseUp);
+    //     });
+    // }
 
     function startingSetup() {
         makeNewImg('.div1', 'images/newRedEyes.png', 'newRedEyes pieces', '142px', '24px');
@@ -51,16 +51,11 @@
     function setMouseUp(event) {
         console.log('setMouseUp');
         dragging = null;
-        const newObj = $.extend({}, $(event.target).data());
-        const top = event.clientY - offset.y;
-        const left = event.clientX - offset.x;
-        newObj.top = top;
-        newObj.left = left;
-        savePictures.drawings.push(newObj);
-        localStorage.picture = JSON.stringify(savePictures);
+        const newObj = $(event.target).data();
+        newObj.top = event.clientY - offset.y;
+        newObj.left = event.clientX - offset.x;
         console.log(event);
         event.preventDefault();
-        // event.stopPropagation();
     }
     function setMouseMove(event) {
         console.log('setMouseMove');
@@ -111,16 +106,16 @@
         // setEvent(`.${newImg.className}`);
     }
 
-    function addOldImg(newDiv, source, className, top, left) {
-        const newImg = {
-            div: newDiv,
-            src: source,
-            className,
-            top,
-            left
-        };
-        addImg(newImg, false);
-    }
+    // function addOldImg(newDiv, source, className, top, left) {
+    //     const newImg = {
+    //         div: newDiv,
+    //         src: source,
+    //         className,
+    //         top,
+    //         left
+    //     };
+    //     addImg(newImg, false);
+    // }
     const popUp = $('#popUp');
     popUp.hide();
     var checkIfSignedUp;
@@ -171,9 +166,11 @@
             }
         });
         if (check) {
+            currentPlayer = newSignIn;
             info.players.push(newSignIn);
             console.log('hello', info.players);
             localStorage.info = JSON.stringify(info);
+            $('#selecter').show();
         }
     }
     function loadOldPlayer(name, password) {
@@ -182,6 +179,7 @@
             if (player.name === name && player.password === password) {
                 currentPlayer = player;
                 check = true;
+                $('#selecter').show();
             }
         });
         if (!check) {
@@ -192,19 +190,32 @@
         console.log('loadOldPlayer', $('#name').val());
         console.log($('#password').val());
     }
+
+    $('#cancelButton').click(() => {
+        popUp.hide();
+    });
+
     $('#selecter').click(() => {
         switch (select.val()) {
         case 'newGame':
             setNewGame();
+            $('option[value="reset"]').attr('selected', 'true');
+            $('option[value="reset"]').removeAttr('selected');
             break;
         case 'saveImage':
             saveImage();
+            $('option[value="reset"]').attr('selected', 'true');
+            $('option[value="reset"]').removeAttr('selected');
             break;
         case 'loadGame':
             loadGame();
+            $('option[value="reset"]').attr('selected', 'true');
+            $('option[value="reset"]').removeAttr('selected');
             break;
         case 'music':
             // setMusic();
+            $('option[value="reset"]').attr('selected', 'true');
+            $('option[value="reset"]').removeAttr('selected');
             break;
         default:
             break;
@@ -219,19 +230,28 @@
     function saveImage() {
         // console.log('one', $('.pieces'));
         const getAllImages = document.querySelectorAll('.pieces');
+        const arrayOfImages = [];
         getAllImages.forEach((element) => {
-            console.log(element);
-            console.log(element.data());
+            arrayOfImages.push($(element).data());
+            // console.dir(element);
+            // console.log('berkowitzky', $(element).data());
         });
-        console.log('two', getAllImages);
-        localStorage.test = JSON.stringify(getAllImages);
+        console.log('array', arrayOfImages);
+        currentPlayer.savedImage = arrayOfImages;
+        localStorage.info = JSON.stringify(info);
+        // localStorage.test = JSON.stringify(arrayOfImages);
     }
     function loadGame() {
-        const loadedGame = JSON.parse(localStorage.test);
-        console.log(loadedGame[0]);
-        // console.log(loadedGame);
-        console.log(loadedGame[0].jQuery331043413856106308812.className);
-        console.log(loadedGame[0].className);
-        console.log('hello hello');
+        const loadedGame = JSON.parse(localStorage.info);
+        console.log(loadedGame);
+        loadedGame.players.forEach((element) => {
+            if (element.name === currentPlayer.name && element.password === currentPlayer.password) {
+                element.savedImage.forEach((image) => {
+                    addImg(image);
+                });
+                console.log(element.name);
+            }
+            // addImg(element);
+        });
     }
 }());

@@ -5,23 +5,12 @@
     let zIndex = 100000;
     let dragging = false;
     let offset;
-    // const savePictures = { drawings: [] };
-    // const savedDrawing = localStorage.picture ? JSON.parse(localStorage.picture) : {};
+
     const info = localStorage.info ? JSON.parse(localStorage.info) : { players: [] };
     const select = $('#play');
     let currentPlayer;
     startingSetup();
     $('#errorMessage').hide();
-    // if (savedDrawing.drawings) {
-    //     savedDrawing.drawings.forEach(element => {
-    //         // console.log(element.div);
-    //         // console.log(element);
-    //         addOldImg(element.div, element.src, element.className, element.top, element.left);
-    //         // $(document).off('mousedown', setMouseDown);
-    //         // $(document).off('mouseup', setMouseUp);
-    //         // $(document).off('mouseup', setMouseUp);
-    //     });
-    // }
 
     function startingSetup() {
         makeNewImg('.div1', 'images/newRedEyes.png', 'newRedEyes pieces', '142px', '24px');
@@ -75,9 +64,7 @@
 
     function addImg(obj, bool) {
         const newImg = $(`<img class="${obj.className}" src="${obj.src}"/>`);
-        // $(obj.className).click((event) => {
-        //     event.stopImmediatePropagation();
-        // });
+
         newImg.data(obj);
         newImg.appendTo($(obj.div));
         newImg.css({

@@ -36,6 +36,7 @@
             y: event.offsetY
         };
         dragging = $(this);
+        event.preventDefault();
     }
     function setMouseUp(event) {
         console.log('setMouseUp');

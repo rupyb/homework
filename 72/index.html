@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #theCanvas {
+            border: 1px solid black;
+        }
+
+        main {
+            display: flex;
+        }
+
+        section {
+            text-align: center;
+            width: 100%;
+        }
+
+        #theButton {
+            align-self: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <canvas id="theCanvas"></canvas>
+        </div>
+        <section>
+            <h2>Play</h2>
+            <button id="theButton">Add a Ant</button>
+            <label for="myColor">Pick A Color</label>
+            <input type="color" id="myColor">
+        </section>
+    </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

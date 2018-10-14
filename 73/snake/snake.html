@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        main {
+            width: 80%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #theCanvas {
+            border: 1px solid black;
+        }
+
+        span {
+            margin-left: 40px;
+            font-size: 1.4em;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        #buttonDiv {
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+
+        #gameOverNotice {
+            position: absolute;
+            visibility: hidden;
+            font-size: 3em;
+            margin: 0 auto;
+            top: 50%;
+            right: 50%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="main">
+        <p id="gameOverNotice">GAME OVER!</p>
+        <canvas id="theCanvas"></canvas>
+    </main>
+    <article>
+        <header><img src="images/snakeHead.png" alt=""><span>PLAY SNAKE</span></header>
+        <div id="buttonDiv">
+            <button id="playButton">Play</button>
+            <span id="score"></span>
+        </div>
+    </article>
+    <audio id="crunch" src="media/crunch.mp3"></audio>
+    <audio id="wallCollision" src="media/explode.wav"></audio>
+    <script src="snake.js"></script>
+</body>
+
+</html>

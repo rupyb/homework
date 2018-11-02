@@ -1,0 +1,11 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  /* right: 40%; */
+  border: 1px dotted yellowgreen;
+  /* height: 200px; */
+  width: 14%;
+  z-index: 50;
+  background-color: beige;
+
+}

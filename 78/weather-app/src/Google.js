@@ -10,7 +10,7 @@ export class MapContainer extends Component {
     console.log('google message', this.props.coords);
     //centerMap = this.props.coords;
     const style = {
-        width: '100%',
+        width: '80%',
         height: '100%'
       }
     return (

@@ -32,7 +32,7 @@ class Fetch extends Component {
 
         let weatherType = weatherInput ? weatherInput : 'imperial';
         let zip = input ? input : '08701';
-        fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=${weatherType}&APPID=b6a9e1ebdce0d01a382553d44d3d8765`
+        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=${weatherType}&APPID=b6a9e1ebdce0d01a382553d44d3d8765`
         )//586ab1b1db83dba0a022d36e15c26ff9   //cb7c71219cf09eb0bb414b932669be97
             // .then(response => {
             //     if(response.ok) return response.json();
@@ -73,11 +73,15 @@ class Fetch extends Component {
                         <p>{this.state.weatherData.description}</p>
                         <p>{this.state.weatherData.temp}</p>
                     </div>
-
+                    <div class="row">
+                        {/* <div class="col-12"> */}
+                            <Google coords={this.state.coord}></Google>
+                        {/* </div> */}
+                    </div>
                 </div>
-                <div className="container">
-                    <Google coords={this.state.coord}></Google>
-                </div>
+                {/* <div className="container mapDiv">
+                <Google coords={this.state.coord}></Google>
+                </div> */}
             </>
         );
     }

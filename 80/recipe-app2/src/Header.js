@@ -6,7 +6,7 @@ import { Link, withRouter } from 'react-router-dom';
 class Header extends Component {
     getOptions = ()=> {
         return (Data.map((item, index) => (
-            <option key={index} value={item.id}>{item.name}</option>
+            <option key={item.id} value={item.id}>{item.name}</option>
         )))
     }
 

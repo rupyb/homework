@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+    <a href="#">Link</a>
+  <select [(ngModel)]="selectedValue"  (change)='onOptionsSelected($event)' class="btn btn-primary">
+    <option disabled hidden>{{ selectedValue }}</option>
+    <option  *ngFor="let item of items" [ngValue]="item">{{ item.name }}</option>
+  </select>
+</nav>
+
+<!-- <h1>My Application</h1>
+<select [(ngModel)]="selectedValue" (change)='onOptionsSelected($event)'>
+  <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+</select> -->

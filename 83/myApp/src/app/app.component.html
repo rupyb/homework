@@ -1,0 +1,11 @@
+<div class="container">
+    
+        <app-navbar [items]="items" (setNew)="setChosenNavItem($event)" class="nav-item"></app-navbar>
+    
+    <div style="text-align:center">
+        <h1>Buy Stuff</h1>
+    </div>
+    <div style="text-align:center">
+        <app-display-items [itemToDisplay]="selectedItem"></app-display-items>
+    </div>
+</div>

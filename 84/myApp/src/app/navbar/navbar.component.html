@@ -1,0 +1,7 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <a href="#">Home</a>
+    <input type="text" placeholder="Enter Zip" [(ngModel)]="zip" (keyup.enter)="getZip()">
+  </nav>
+  <app-navbar-display [weatherData]="weatherData"></app-navbar-display>
+</div>

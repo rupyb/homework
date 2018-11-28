@@ -1,0 +1,17 @@
+
+
+
+coord: {lon: -74.21, lat: 40.07}
+
+main.humidity: 89 number
+
+main.temp: 52.09 number
+
+
+name: "Toms River" string
+
+weather[0].description string
+weather[0].main string
+
+
+wind.speed number

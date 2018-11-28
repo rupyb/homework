@@ -1,0 +1,11 @@
+<div class="weatherDisplay" *ngIf="weatherData | async as weather; else loading">
+  <h2>{{weather.name}}</h2>
+  <h3> Temp {{weather.temp}}</h3>
+  <h4>Humidity {{weather.humidity}}</h4>
+  <h4>Windspeed {{weather.windspeed}}</h4>
+  <h4>Conditions {{weather.conditions}}</h4>
+  <a [routerLink]="['/map']">Map It</a>
+</div>
+<ng-template #loading>
+  <div>Please Enter a Valid Zip ...</div>
+</ng-template>

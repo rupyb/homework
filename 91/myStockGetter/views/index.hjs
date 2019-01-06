@@ -1,0 +1,5 @@
+<form method="POST">
+  <label for="stockname">Enter Symbol</label>
+  <input type="text" id="stockinput" name="stockname">
+  <button>Get Quote</button>
+</form>

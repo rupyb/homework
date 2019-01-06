@@ -1,0 +1,23 @@
+<h1>{{obj.symbol}}</h1>
+<hr>
+<h3>open: {{obj.open}}</h3>
+<h3>high: {{obj.high}}</h3>
+<h3>low: {{obj.low}}</h3>
+<h3>price: ${{obj.price}}</h3>
+<h3>volume: {{obj.volume}}</h3>
+<h3>latest trading day: {{obj.latestTradingDay}}</h3>
+<h3>previous close: {{obj.previousClose}}</h3>
+<h3>change: {{ obj.change}}</h3>
+<h3>change percent: {{obj.changePercent}}</h3>
+<hr>
+
+ {{!-- { '01. symbol': 'GOOG',
+     '02. open': '1041.0000',
+     '03. high': '1056.9800',
+     '04. low': '1014.0800',
+     '05. price': '1016.0600',
+     '06. volume': '1839314',
+     '07. latest trading day': '2019-01-03',
+     '08. previous close': '1045.8500',
+     '09. change': '-29.7900',
+     '10. change percent': '-2.8484%' }  --}}
